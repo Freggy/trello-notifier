@@ -32,6 +32,8 @@ template = """
 def callback():
     json = request.get_json()
     if json['action']['type'] == "updateCard":
+        # TODO: Find a messages with the same card id and update it,
+        # because changes could have been made
         user = json['action']['memberCreator']['fullName']
         desc = json['action']['data']['card']['desc']
         card_id = json['action']['data']['card']['id']
